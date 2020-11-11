@@ -15,6 +15,7 @@
 
         {{-- page content --}}
         <div class="right_col" role="main">
+            @include('admin.layouts._message')
             <div class="page-title">
                 @yield('header-content')
               </div>
@@ -29,7 +30,7 @@
       </div>
     </div>
 
-    
+
     @include('admin.layouts._scripts')
   </body>
 </html>

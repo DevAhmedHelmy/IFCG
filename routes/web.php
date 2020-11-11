@@ -15,14 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('admin.layouts.app');
-});
+})->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function(){
     Route::resources([
-            'roles'=>'Role\RoleController'
+            'roles'=>'Role\RoleController',
+            'employees' => 'EmployeeController',
+            'hygieneInspections' => 'HygieneInspection\HygieneInspectionController'
         ]);
 });
 

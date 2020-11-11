@@ -15,7 +15,7 @@
     <link href="{{ asset('admin/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
     {{-- iCheck --}}
     <link href="{{ asset('admin/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{asset('admin/build/css/toastr/toastr.min.css')}}">
     {{-- bootstrap-progressbar --}}
     <link href="{{ asset('admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
     {{-- JQVMap --}}
@@ -25,3 +25,4 @@
 
     {{-- Custom Theme Style --}}
     <link href="{{ asset('admin/build/css/custom.min.css')}}" rel="stylesheet">
+    <script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>

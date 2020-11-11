@@ -33,8 +33,35 @@
 <script src="{{asset('admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
 <script src="{{asset('admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
 {{-- bootstrap-daterangepicker --}}
+<script src="{{asset('admin/build/js/sweetalert2/sweetalert2.min.js')}}"></script>
+<script src="{{asset('admin/build/css/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('admin/vendors/moment/min/moment.min.js')}}"></script>
 <script src="{{asset('admin/vendors/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
 {{-- Custom Theme Scripts --}}
 <script src="{{asset('admin/build/js/custom.min.js')}}"></script>
+<script src="{{asset('admin/build/js/select2.min.js')}}"></script>
+
+<script src="{{asset('admin/build/js/sweetalert.min.js')}}"></script>
+
+<script>
+    function confirmDelete(item_id) {
+        swal({
+            title: "{{ __('general.Are_you_sure') }}",
+            text: "{{ __('general.Once_deleted') }}",
+            icon: "warning",
+            buttons: ["{{ __('general.no') }}", "{{ __('general.Delete') }}"],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $('.'+item_id).submit();
+                } else {
+                    swal("{{ __('general.Cancelled_Successfully') }}");
+                }
+            });
+    }
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+</script>
