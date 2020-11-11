@@ -31,7 +31,8 @@
             @csrf
             <div class="form-group">
             <label for="name">Employee Name</label>
-            <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" required name="name" value="{{old('name',$employee->name)}}">
+            <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" required name="name"
+                    value=" {{ isset($employee) ? old('name',$employee->name) : old('name') }}">
             @error('name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -40,7 +41,8 @@
             </div>
             <div class="form-group">
             <label for="Code">Code</label>
-            <input type="text" id="Code" class="form-control @error('code') is-invalid @enderror" required name="code" value="{{old('code',$employee->code)}}">
+            <input type="text" id="Code" class="form-control @error('code') is-invalid @enderror" required name="code"
+                    value="{{isset($employee) ? old('code',$employee->code) : old('code') }}">
             @error('code')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

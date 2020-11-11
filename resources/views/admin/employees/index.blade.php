@@ -40,12 +40,12 @@
                         <td>{{ $employee->gender }}</td>
                         <td>
                             <form class="delete-form" action="{{ route('employees.destroy',$employee->id) }}" method="post">
-                                <a href="{{route('employees.show',$employee->id)}}" class="btn btn-info btn-sm"> <i class="fa fa-eye fa-sm"></i> @lang('admin.view')</a>
-                                <a href="{{route('employees.edit',$employee->id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-edit fa-sm"></i> @lang('admin.edit')</a>
+                                <a href="{{route('employees.show',$employee->id)}}" class="btn btn-info btn-sm"> <i class="fa fa-eye fa-sm"></i> </a>
+                                <a href="{{route('employees.edit',$employee->id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-edit fa-sm"></i> </a>
 
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('delete-form')"> <i class="fa fa-trash fa-sm"></i> @lang('admin.delete')</button>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('delete-form')"> <i class="fa fa-trash fa-sm"></i> </button>
                             </form>
                         </td>
                     </tr>
