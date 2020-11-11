@@ -1,8 +1,9 @@
 <?php
 
 use App\Models\User;
-use App\Models\Country;
+use App\Models\Employee;
 use Illuminate\Database\Seeder;
+use App\Models\HygieneInspection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,10 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      
+
         $this->call(PermissionTableSeeder::class);
         $this->call(AdminSeeder::class);
         // $this->call(SettingSeeder::class);
-        factory(User::class,5)->create(); 
+        factory(User::class,5)->create();
+        factory(Employee::class,5)->create();
+        factory(HygieneInspection::class, 5)->create();
     }
 }

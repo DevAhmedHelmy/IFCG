@@ -22,9 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['auth'])->group(function(){
     Route::resources([
-            'roles'=>'Role\RoleController',
-            'employees' => 'EmployeeController',
-            'hygieneInspections' => 'HygieneInspection\HygieneInspectionController'
+            'roles'                 =>'Role\RoleController',
+            'employees'             => 'Employee\EmployeeController',
+            'hygieneInspections'    => 'HygieneInspection\HygieneInspectionController'
         ]);
 });
 

@@ -27,6 +27,7 @@ class CreateHygieneInspectionsTable extends Migration
             $table->enum('cleanness',[0,3,5])->default(0);
             $table->enum('wounds',[0,3,5])->default(0);
             $table->enum('nails',[0,3,5])->default(0);
+            $table->enum('mask',[0,3,5])->default(0);
             $table->enum('accessories',[0,3,5])->default(0);
             $table->enum('eating',[0,3,5])->default(0);
             $table->enum('rosacea',[1,2,3])->default(1);
