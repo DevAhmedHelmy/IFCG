@@ -17,13 +17,13 @@
 <div class="col-md-12 col-sm-12 ">
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('hygieneInspections.create') }}" class="btn btn-info btn-sm mr-2"><i class="fa fa-plus fa-sm"></i> Add New Data</a>
-            <a href="{{ route('hygieneInspections.daily') }}" class="btn btn-success btn-sm"><i class="fa-file-excel-o fa-sm"></i> Daily Report</a>
         </div>
         <div class="card-body">
             <table class="table table-hover table-bordered">
                 <thead>
                   <tr>
+
+
                     <th scope="col">#</th>
                     <th scope="col">@lang('admin.name')</th>
                     <th scope="col">@lang('admin.flu')</th>

@@ -18,6 +18,8 @@ class HygieneInspectionController extends Controller
     public function index()
     {
         $hygieneInspections = HygieneInspection::with('employee')->get();
+
+
         return view('admin.hygieneInspections.index',['hygieneInspections'=>$hygieneInspections]);
     }
 

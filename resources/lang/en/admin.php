@@ -31,8 +31,13 @@ return[
 
 
     // login page
+    'users' => 'Users',
+    'permissions' => 'Permissions',
+    'Hygiene_Inspections' => 'Hygiene Inspections',
+    'reports' => 'Reports',
+    'info' => 'Info',
     'login'                                             => 'Login',
-    'employees'                                             => 'employees',
+    'employees'                                         => 'employees',
     'Save_credentials'                                  => 'Save credentials',
     'Forgot_password'                                   =>'Forgot password',
     'Reset'                                             => 'Reset',

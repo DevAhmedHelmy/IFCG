@@ -6,7 +6,7 @@
   </div>
 
   <div class="title_right">
-    <div class="col-md-5 col-sm-5 pull-right ">
+    <div class="col-md-6 col-sm-6 pull-right ">
 
     </div>
   </div>
@@ -80,8 +80,12 @@
                         </div>
                         <div class="col form-group">
                             <label for="area">@lang('admin.area')</label>
-                            <input type="text" name="area" id="area" class="form-control @error('area') is-invalid @enderror"
-                                value="{{isset($hygieneInspection) ? old('area',$hygieneInspection->area) : old('code') }}">
+                            <select class="form-control @error('area') is-invalid @enderror" required id="area" name="area">
+                                <option value="">Choose..</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->area =='production') selected @endif value="production">production</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->area =='fill') selected @endif value="fill">fill</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->area =='stores') selected @endif value="stores">stores</option>
+                            </select>
                             @error('area')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -98,7 +102,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->flu ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->flu ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->flu ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->flu ==6) selected @endif value="6">6</option>
                             </select>
                             @error('flu')
                                 <span class="invalid-feedback" role="alert">
@@ -112,7 +116,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->diarrhea ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->diarrhea ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->diarrhea ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->diarrhea ==6) selected @endif value="6">6</option>
                             </select>
                             @error('diarrhea')
                                 <span class="invalid-feedback" role="alert">
@@ -130,7 +134,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->beard ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->beard ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->beard ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->beard ==6) selected @endif value="6">6</option>
                             </select>
                             @error('beard')
                                 <span class="invalid-feedback" role="alert">
@@ -144,7 +148,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->uniform ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->uniform ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->uniform ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->uniform ==6) selected @endif value="6">6</option>
                             </select>
                             @error('uniform')
                                 <span class="invalid-feedback" role="alert">
@@ -162,7 +166,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->hairnet ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->hairnet ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->hairnet ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->hairnet ==6) selected @endif value="6">6</option>
                             </select>
                             @error('hairnet')
                                 <span class="invalid-feedback" role="alert">
@@ -176,7 +180,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->shoes ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->shoes ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->shoes ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->shoes ==6) selected @endif value="6">6</option>
                             </select>
                             @error('shoes')
                                 <span class="invalid-feedback" role="alert">
@@ -194,7 +198,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->gloves ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->gloves ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->gloves ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->gloves ==6) selected @endif value="6">6</option>
                             </select>
                             @error('gloves')
                                 <span class="invalid-feedback" role="alert">
@@ -208,7 +212,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->pins ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->pins ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->pins ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->pins ==6) selected @endif value="6">6</option>
                             </select>
                             @error('pins')
                                 <span class="invalid-feedback" role="alert">
@@ -226,7 +230,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->mask ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->mask ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->mask ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->mask ==6) selected @endif value="6">6</option>
                             </select>
                             @error('mask')
                                 <span class="invalid-feedback" role="alert">
@@ -240,7 +244,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->cleanness ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->cleanness ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->cleanness ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->cleanness ==6) selected @endif value="6">6</option>
                             </select>
                             @error('cleanness')
                                 <span class="invalid-feedback" role="alert">
@@ -258,7 +262,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->wounds ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->wounds ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->wounds ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->wounds ==6) selected @endif value="6">6</option>
                             </select>
                             @error('wounds')
                                 <span class="invalid-feedback" role="alert">
@@ -272,7 +276,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->nails ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->nails ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->nails ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->nails ==6) selected @endif value="6">6</option>
                             </select>
                             @error('nails')
                                 <span class="invalid-feedback" role="alert">
@@ -290,7 +294,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->accessories ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->accessories ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->accessories ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->accessories ==6) selected @endif value="6">6</option>
                             </select>
                             @error('accessories')
                                 <span class="invalid-feedback" role="alert">
@@ -304,7 +308,7 @@
                                 <option value="">Choose..</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->eating ==0) selected @endif value="0">0</option>
                                 <option @if(isset($hygieneInspection) && $hygieneInspection->eating ==3) selected @endif value="3">3</option>
-                                <option @if(isset($hygieneInspection) && $hygieneInspection->eating ==5) selected @endif value="5">5</option>
+                                <option @if(isset($hygieneInspection) && $hygieneInspection->eating ==6) selected @endif value="6">6</option>
                             </select>
                             @error('eating')
                                 <span class="invalid-feedback" role="alert">
@@ -318,8 +322,8 @@
                     <div class="mt-4 d-flex justify-content-between">
                         <div class="col form-group">
                             <label for="notes">@lang('admin.notes')</label>
-                             <textarea name="notes" id="notes" class="form-control @error('notes') is-invalid @enderror">
-                                @if($hygieneInspection !==null && $hygieneInspection->notes) {{$hygieneInspection->notes}} @endif
+                             <textarea name="notes" id="notes" class="form-control @error('notes') is-invalid @enderror" required>
+                                @isset($hygieneInspection) {{$hygieneInspection->notes}} @endisset
                             </textarea>
                             @error('notes')
                                 <span class="invalid-feedback" role="alert">
@@ -334,7 +338,7 @@
                     <div class="mt-4 d-flex justify-content-between">
                         <div class="col form-group">
                             <label for="corrective_action">@lang('admin.corrective_action')</label>
-                             <textarea name="corrective_action" id="corrective_action" class="form-control @error('corrective_action') is-invalid @enderror">@if($hygieneInspection !==null && $hygieneInspection->corrective_action) {{$hygieneInspection->corrective_action}} @endif</textarea>
+                             <textarea name="corrective_action" id="corrective_action" class="form-control @error('corrective_action') is-invalid @enderror" required>@isset($hygieneInspection) {{$hygieneInspection->corrective_action}} @endisset</textarea>
                             @error('corrective_action')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

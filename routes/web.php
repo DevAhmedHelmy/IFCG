@@ -24,7 +24,16 @@ Route::middleware(['auth'])->group(function(){
     Route::resources([
             'roles'                 =>'Role\RoleController',
             'employees'             => 'Employee\EmployeeController',
-            'hygieneInspections'    => 'HygieneInspection\HygieneInspectionController'
         ]);
+
+    Route::namespace('HygieneInspection')->group(function () {
+        // Controllers Within The 'App\Http\Controllers\HygieneInspection' Namespace
+        Route::get('hygieneInspections/report/daily', 'HygieneInspectionReportController@daily')->name('hygieneInspections.daily');
+        Route::get('hygieneInspections/report', 'HygieneInspectionReportController@index')->name('hygieneInspections.report');
+        Route::get('hygieneInspections/report/search', 'HygieneInspectionReportController@search')->name('hygieneInspections.search');
+        Route::resource('hygieneInspections', 'HygieneInspectionController');
+
+    });
+
 });
 

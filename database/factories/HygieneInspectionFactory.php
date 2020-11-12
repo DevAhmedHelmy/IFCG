@@ -8,27 +8,29 @@ use App\Models\HygieneInspection;
 
 $factory->define(HygieneInspection::class, function (Faker $faker) {
     $employees = Employee::count();
-
+    $array1 = [0,3,6];
+    $array2 = [1,2,3];
+    $array3 = [1,2];
+    $array4=['production', 'fill','stores'];
     return [
         'employee_id' => rand(1,$employees),
-
-        'diarrhea' => $faker->randomElement([0,3,5]) ,
-        'beard' => $faker->randomElement([0,3,5]),
-        'uniform' => $faker->randomElement([0,3,5]) ,
-        'hairnet' => $faker->randomElement([0,3,5]) ,
-        'flu' => $faker->randomElement([0,3,5]) ,
-        'shoes' => $faker->randomElement([0,3,5]) ,
-        'gloves' => $faker->randomElement([0,3,5]) ,
-        'pins' => $faker->randomElement([0,3,5]) ,
-        'cleanness' => $faker->randomElement([0,3,5]) ,
-        'wounds' => $faker->randomElement([0,3,5]) ,
-        'nails' => $faker->randomElement([0,3,5]) ,
-        'mask' => $faker->randomElement([0,3,5]) ,
-        'accessories' => $faker->randomElement([0,3,5]),
-        'eating' => $faker->randomElement([0,3,5]) ,
-        'rosacea' => $faker->randomElement([1,2,3]) ,
-        'shift' => $faker->randomElement([1,2]) ,
-        'area' => $faker->sentence($nbWords = 3, $variableNbWords = true),
+        'diarrhea' => $faker->randomElement($array1) ,
+        'beard' => $faker->randomElement($array1),
+        'uniform' => $faker->randomElement($array1) ,
+        'hairnet' => $faker->randomElement($array1) ,
+        'flu' => $faker->randomElement($array1) ,
+        'shoes' => $faker->randomElement($array1) ,
+        'gloves' => $faker->randomElement($array1) ,
+        'pins' => $faker->randomElement($array1) ,
+        'cleanness' => $faker->randomElement($array1) ,
+        'wounds' => $faker->randomElement($array1) ,
+        'nails' => $faker->randomElement($array1) ,
+        'mask' => $faker->randomElement($array1) ,
+        'accessories' => $faker->randomElement($array1),
+        'eating' => $faker->randomElement($array1) ,
+        'rosacea' => $faker->randomElement($array2) ,
+        'shift' => $faker->randomElement($array3) ,
+        'area' => $faker->randomElement($array4),
         'notes' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'corrective_action' => $faker->sentence($nbWords = 6, $variableNbWords = true),
     ];

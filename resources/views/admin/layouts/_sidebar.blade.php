@@ -13,7 +13,9 @@
         </div>
         <div class="profile_info">
           <span>Welcome,</span>
-          <h2>John Doe</h2>
+          <h2>@auth
+              {{ auth()->user()->name }}
+          @endauth</h2>
         </div>
       </div>
       {{-- /menu profile quick info --}}
@@ -29,37 +31,34 @@
               <ul class="nav child_menu">
                 <li><a href="index.html">Dashboard</a></li>
                 <li><a href="index2.html">Settings</a></li>
+                <li><a href="{{route('roles.index')}}">@lang('admin.permissions')</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> @lang('admin.users') <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="form.html">Users</a></li>
-                <li><a href="{{ route('employees.index') }}">Employees</a></li>
+                <li><a href="form.html">@lang('admin.users') </a></li>
+                <li><a href="{{ route('employees.index') }}">@lang('admin.employees')</a></li>
               </ul>
             </li>
-            <li><a><i class="fa fa-desktop"></i> Permissions <span class="fa fa-chevron-down"></span></a>
-              <ul class="nav child_menu">
-                <li><a href="{{route('roles.index')}}">Permissions</a></li>
-
-              </ul>
-            </li>
-
-
-
           </ul>
         </div>
           <div class="menu_section">
-          <h3>INFO</h3>
+          <h3>@lang('admin.info')</h3>
           <ul class="nav side-menu">
-            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-bug"></i> @lang('admin.Hygiene_Inspections') <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                <li><a href="{{route('hygieneInspections.index')}}">@lang('admin.Hygiene_Inspections')</a></li>
+                <li><a href="{{route('hygieneInspections.report')}}"> @lang('admin.reports')</a></li>
+            </li>
+            {{-- <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
-                <li><a href="{{route('hygieneInspections.index')}}">Hygiene Inspections</a></li>
+
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="project_detail.html">Project Detail</a></li>
                 <li><a href="contacts.html">Contacts</a></li>
                 <li><a href="profile.html">Profile</a></li>
-              </ul>
-            </li>
+              </ul> --}}
+            {{-- </li> --}}
 
             {{-- <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
