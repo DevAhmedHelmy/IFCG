@@ -2,7 +2,7 @@
 
  @section('header-content')
  <div class="title_left">
-    <h3>Hygiene Inspection <small>Add New Data</small></h3>
+    <h3>@lang('admin.Hygiene_Inspection') <small>@lang('admin.add_new_data')</small></h3>
   </div>
 
   <div class="title_right">
@@ -17,7 +17,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="card">
             <div class="card-header">
-                Add New Data
+                @lang('admin.add_new_data')
             </div>
             <div class="card-body">
                 @isset($hygieneInspection)
@@ -349,7 +349,7 @@
                     </div>
                 </div>
                 <div class="col-12 mt-4 text-center">
-                         <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+                         <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> @lang('admin.save') </button>
                 </div>
             </form>
             </div>

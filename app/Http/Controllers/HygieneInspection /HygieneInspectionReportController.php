@@ -47,4 +47,28 @@ class HygieneInspectionReportController extends Controller
         return view('admin.hygieneInspections.reports.result',['hygieneInspections'=>$hygieneInspections]);
 
     }
+    public function result()
+    {
+        $query = HygieneInspection::query();
+        $query->when($_GET['employee_id'], function ($q) {
+            return $q->where('employee_id', $_GET['employee_id']);
+        });
+        $query->when($_GET['area'], function ($q) {
+            return $q->where('area', $_GET['area']);
+        });
+        $query->when($_GET['shift'], function ($q) {
+            return $q->where('shift',$_GET['shift'] );
+        });
+        $query->when($_GET['rosacea'], function ($q) {
+            return $q->where('rosacea',$_GET['rosacea'] );
+        });
+        $query->when($_GET['from'], function ($q) {
+            return $q->where('created_at', '>=' , $_GET['from'] . ' ' . '00:00:00');
+        });
+        $query->when($_GET['to'], function ($q) {
+            return $q->where('created_at', '<=' ,$_GET['to'] . ' ' . '23:59:59');
+        });
+        $hygieneInspections = $query->get();
+        dd($hygieneInspections);
+    }
 }

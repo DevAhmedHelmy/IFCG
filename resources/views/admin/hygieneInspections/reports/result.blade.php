@@ -8,6 +8,8 @@
   <div class="title_right">
     <div class="col-md-5 col-sm-5 pull-right ">
 
+        <a href="{{ url('hygieneInspections/report/result'.'?'.http_build_query($_GET)) }}" class="btn btn-success btn-sm"><i class="fa-file-excel-o fa-sm"></i>
+            @lang('admin.Daily_Report') </a>
     </div>
   </div>
  @endsection

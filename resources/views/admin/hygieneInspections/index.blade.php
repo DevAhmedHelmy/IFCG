@@ -2,7 +2,7 @@
 
  @section('header-content')
  <div class="title_left">
-    <h3>Hygiene Inspection <small>Listing Data</small></h3>
+    <h3> @lang('admin.Hygiene_Inspection')<small>@lang('admin.Listing_Data')</small></h3>
   </div>
 
   <div class="title_right">
@@ -17,8 +17,10 @@
 <div class="col-md-12 col-sm-12 ">
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('hygieneInspections.create') }}" class="btn btn-info btn-sm mr-2"><i class="fa fa-plus fa-sm"></i> Add New Data</a>
-            <a href="{{ route('hygieneInspections.daily') }}" class="btn btn-success btn-sm"><i class="fa-file-excel-o fa-sm"></i> Daily Report</a>
+            <a href="{{ route('hygieneInspections.create') }}" class="btn btn-info btn-sm mr-2"><i class="fa fa-plus fa-sm"></i>
+                @lang('admin.add_new_data')</a>
+            <a href="{{ route('hygieneInspections.daily') }}" class="btn btn-success btn-sm"><i class="fa-file-excel-o fa-sm"></i>
+                @lang('admin.Daily_Report') </a>
         </div>
         <div class="card-body">
             <table class="table table-hover table-bordered">

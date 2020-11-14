@@ -2,7 +2,7 @@
 
  @section('header-content')
  <div class="title_left">
-    <h3>Hygiene Inspection <small>Searching</small></h3>
+    <h3>@lang('admin.Hygiene_Inspection') <small> @lang('admin.Searching')</small></h3>
   </div>
 
   <div class="title_right">
@@ -17,7 +17,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="card">
             <div class="card-header">
-                Add New Data
+                @lang('admin.Searching')
             </div>
             <div class="card-body">
                 <form action="{{route('hygieneInspections.search')}}" method="GET">
@@ -26,7 +26,7 @@
                     <div class="mt-4 d-flex justify-content-between">
                         <div class="col form-group">
                             <label for="employee_id">@lang('admin.employees')</label>
-                            <select class="form-control" id="employee_id" name="employee_id">
+                            <select class="form-control" id="employee_id" name="employee_id" required>
                                 <option value="">Choose..</option>
                                 @foreach($employees as $employee)
                                     <option value="{{$employee->id}}">{{$employee->name}}</option>

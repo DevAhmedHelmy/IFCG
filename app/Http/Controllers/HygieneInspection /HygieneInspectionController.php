@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\HygieneInspection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\HygieneInspectionRequest;
-
+use DB;
 class HygieneInspectionController extends Controller
 {
     /**

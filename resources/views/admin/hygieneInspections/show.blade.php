@@ -2,7 +2,7 @@
 
  @section('header-content')
  <div class="title_left">
-    <h3>Hygiene Inspection <small>Show Data</small></h3>
+    <h3> @lang('admin.Hygiene_Inspection') <small>@lang('admin.show_data')</small></h3>
   </div>
 
   <div class="title_right">
@@ -17,7 +17,7 @@
 <div class="col-md-12 col-sm-12 ">
     <div class="card">
         <div class="card-header">
-            <h5>@lang('admin.name') {{$hygieneInspection->employee->name}}</h5>
+            <h5>@lang('admin.name') :: {{$hygieneInspection->employee->name}}</h5>
 
         </div>
         <div class="card-body">
@@ -27,6 +27,10 @@
 
                     <table class="countries_list">
                       <tbody>
+                        <tr>
+                            <td>@lang('admin.area')</td>
+                            <td class="fs15 fw700 text-right">{{$hygieneInspection->area}}</td>
+                          </tr>
                         <tr>
                           <td>@lang('admin.shift')</td>
                           <td class="fs15 fw700 text-right">{{$hygieneInspection->shift}}</td>
@@ -96,12 +100,26 @@
                             <td>@lang('admin.eating')</td>
                             <td class="fs15 fw700 text-right">{{$hygieneInspection->eating}}</td>
                           </tr>
+                          <tr>
+                            <td>@lang('admin.percentage')</td>
+                            <td class="fs15 fw700 text-right">{{$hygieneInspection->percentage}}</td>
+                          </tr>
                       </tbody>
                     </table>
                   </div>
 
             </div>
 
+            <div class="col-md-12 mt-5">
+                <div class="col-md-6">
+                    <p>@lang('admin.notes')</p>
+                    <div>{{$hygieneInspection->notes}}</div>
+                </div>
+                <div class="col-md-6">
+                  <p>@lang('admin.corrective_action')</p>
+                  <div>{{$hygieneInspection->corrective_action}}</div>
+              </div>
+            </div>
         </div>
     </div>
 </div>

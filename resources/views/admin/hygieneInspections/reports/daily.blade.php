@@ -18,6 +18,7 @@
         <th scope="col">@lang('admin.eating')</th>
         <th scope="col">@lang('admin.rosacea')</th>
         <th scope="col">@lang('admin.shift')</th>
+        <th scope="col">@lang('admin.Percentage')</th>
         <th scope="col">@lang('admin.area')</th>
         <th scope="col">@lang('admin.notes')</th>
         <th scope="col">@lang('admin.corrective_action')</th>
@@ -45,6 +46,7 @@
             <td>{{ $value->eating }}</td>
             <td>{{ $value->rosacea }}</td>
             <td>{{ $value->shift }}</td>
+            <td>{{ $value->percentage }}</td>
             <td>{{ $value->area }}</td>
             <td> {{ $value->notes }}</td>
             <td> {{ $value->corrective_action }}</td>

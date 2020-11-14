@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function(){
         Route::get('hygieneInspections/report/daily', 'HygieneInspectionReportController@daily')->name('hygieneInspections.daily');
         Route::get('hygieneInspections/report', 'HygieneInspectionReportController@index')->name('hygieneInspections.report');
         Route::get('hygieneInspections/report/search', 'HygieneInspectionReportController@search')->name('hygieneInspections.search');
+        Route::get('hygieneInspections/report/result', 'HygieneInspectionReportController@result')->name('hygieneInspections.result');
         Route::resource('hygieneInspections', 'HygieneInspectionController');
 
     });
