@@ -51,6 +51,7 @@
                 <tbody>
                 @foreach($hygieneInspections as $key => $value)
                     <tr>
+
                         <th scope="row">{{ $key + 1 }}</th>
                         <td>{{ $value->employee->name }}</td>
                         <td>{{ $value->flu }}</td>

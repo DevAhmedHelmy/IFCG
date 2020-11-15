@@ -18,4 +18,10 @@ class HygieneInspection extends Model
         return round($result, 2) . ' %';
     }
 
+    public static function total($value)
+    {
+        $total = ($value->flu + $value->diarrhea + $value->beard + $value->uniform +$value->hairnet + $value->shoes +$value->gloves + $value->pins+ $value->cleanness +$value->wounds + $value->nails + $value->mask + $value->accessories + $value->eating);
+        return $total;
+    }
+
 }

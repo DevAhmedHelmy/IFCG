@@ -17,8 +17,7 @@ class HygieneInspectionController extends Controller
      */
     public function index()
     {
-        $test = HygieneInspection::where('employee_id',2);
-        $count = $test->count();
+
 
 
         $hygieneInspections = HygieneInspection::with('employee')->get();
@@ -47,6 +46,7 @@ class HygieneInspectionController extends Controller
     public function store(HygieneInspectionRequest $request)
     {
         $data = $request->validated();
+        $data['total'] = HygieneInspection::total($request);
         HygieneInspection::create($data);
         return redirect()->route('hygieneInspections.index')->with('success',trans('admin.created_Successfully'));
     }
@@ -84,6 +84,7 @@ class HygieneInspectionController extends Controller
     public function update(HygieneInspectionRequest $request, HygieneInspection $hygieneInspection)
     {
         $data = $request->validated();
+        $data['total'] = HygieneInspection::total($request);
         $hygieneInspection->update($data);
         return redirect()->route('hygieneInspections.index')->with('success',trans('admin.updated_Successfully'));
     }
