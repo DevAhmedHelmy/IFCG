@@ -17,4 +17,5 @@ class HygieneInspection extends Model
         $result = (($this->flu + $this->diarrhea + $this->beard + $this->uniform +$this->hairnet + $this->shoes +$this->gloves + $this->pins+ $this->cleanness +$this->wounds + $this->nails + $this->mask + $this->accessories + $this->eating) / 84 * 100);
         return round($result, 2) . ' %';
     }
+
 }

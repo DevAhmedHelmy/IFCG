@@ -17,6 +17,10 @@ class HygieneInspectionController extends Controller
      */
     public function index()
     {
+        $test = HygieneInspection::where('employee_id',2);
+        $count = $test->count();
+
+
         $hygieneInspections = HygieneInspection::with('employee')->get();
 
 
